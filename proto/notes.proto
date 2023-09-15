@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+package notes_service; 
+
+service Notes {
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message CreateRequest {
+  string text = 1;
+}
+
+message CreateResponse {
+  string text = 1;
+}
+
+message DeleteRequest {
+  uint64 note_id = 1;
+}
+
+message DeleteResponse {
+  string text = 1;
+}
